@@ -6,7 +6,7 @@ Eleanor Roosevelt
 Say goodbye to Windows Sub-system for Linux (WSL2).
 
 
-Introduction: 
+Introduction:    
 If you have Windows 11 and you are using Windows Subsystem for Linux (WSL2), just know, that I feel your pain. I was using Linux kernal 
 with Linux's distributions such as Debian and Ubuntu (Just a Linux command line tool). And while it was great using WSL2 as a virtual machine
 that mounts Linux Kernal to use distributions for software configurations, package managment, file system interaction, and network enhancements,
@@ -22,7 +22,7 @@ Objective:
 - Setting up openSUSE, and ensuring a smooth dual-boot system.
 
 
-Description: 
+Description:    
 We are setting up a dual-boot system with Windows 11 and openSUSE Linux, which will replace or move away from Windows Subsystem for Linux (WSL2). By setting up a dual-boot system, you can enjoy the best of both worlds (Windows 11 & Linux OS). OpenSUSE OS will better help solidify your Linux learning and administrator development, server management, and Linux-specific tasks. Last, this project will help individuals who are facing performance or compatibility limitations with WSL2 and wish to migrate to a full Linux installation.
 
 
