@@ -1,5 +1,5 @@
-Quote for the mind: 
-Great minds discuss ideas; average minds discuss events; small minds discuss people.
+Quote for the mind:    
+Great minds discuss ideas; average minds discuss events; small minds discuss people.    
 Eleanor Roosevelt
 
 # Boot-Linux-OS-with-Windows-11-(Dual-booting-OS)
