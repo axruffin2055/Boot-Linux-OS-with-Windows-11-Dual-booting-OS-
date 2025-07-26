@@ -50,16 +50,18 @@ Prerequisites:
 - A backup of important data.
 - Internet access for downloading openSUSE ISO and updates during installation.
 
+Installation:  
+[Step-by-Step Linux install](https://github.com/axruffin2055/Dual-booting-Operating-System-_-Linux-OS-with-Windows-11-OS/blob/main/Step-by-Step%20install%20openSUSE%20OS%20dual%20booting%20with%20Windows%2011)  
 
+Usage:
 
-
-    
-
-
-
-Installation: 
-
-
-
-Usage: 
-Show how to use the project after installation
+Once openSUSE is installed, you can use it alongside Windows 11. The bootloader (GRUB2) will handle the dual-boot process, and let you choose which OS to boot into. While using openSUSE (Leap or Tumbleweed), you can access Linux tools, software configurations, and network enhancements in a native environment without the limitations of WSL2.
+You can also:
+- Install software through openSUSE's package manager (zypper).
+- Manage partitions, drivers, and system settings.
+- Set up Linux tools for development, scripting, and more.
+Plus I also feel that openSUSE forces you to learn and understand Linux because you have to handle backend processes that other Linux OS normally do.
+Main backend processes you will have to handle are:
+- systemd units you just installed or are already installed (systemctl status <packageName> will save you a lot of headache)
+- Network security using K Desktop Environment (KDE) for public and private keys.
+[Use this as a reference on different task: ](https://github.com/axruffin2055/Linux-System-Admin-Task-Reference)
