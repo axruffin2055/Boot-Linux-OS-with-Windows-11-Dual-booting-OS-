@@ -64,4 +64,4 @@ Plus I also feel that openSUSE forces you to learn and understand Linux because 
 Main backend processes you will have to handle are:
 - systemd units you just installed or are already installed (systemctl status <packageName> will save you a lot of headache)
 - Network security using K Desktop Environment (KDE) for public and private keys.
-[Use this as a reference on different task: ](https://github.com/axruffin2055/Linux-System-Admin-Task-Reference)
+- [Use this as a reference on different task](https://github.com/axruffin2055/Linux-System-Admin-Task-Reference)
