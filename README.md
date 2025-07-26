@@ -3,8 +3,13 @@ Great minds discuss ideas; average minds discuss events; small minds discuss peo
 Eleanor Roosevelt
 
 # Boot-Linux-OS-with-Windows-11-(Dual-booting-OS)
-Say goodbye to Windows Sub-system for Linux (WSL2).
+Before starting this project, I highly recommend reinstalling Windows 11 on a clean disk. Why?
+If you will are using openSUSE Linux as main OS for web servers, vm host, or data backup (/vars logs included),
+then you will need added disk space for data, and storage pool.
+Highly recommended: [Install Windows 11 on a clean disk](https://github.com/axruffin2055/How-to-install-Windows-11-on-a-clean-disk./blob/main/Step-by-Step)
 
+Now...
+Say goodbye to Windows Sub-system for Linux (WSL2).
 
 Introduction:    
 If you have Windows 11 and you are using Windows Subsystem for Linux (WSL2), just know, that I feel your pain. I was using Linux kernal 
