@@ -1,0 +1,89 @@
+
+Installation Steps: 
+
+Download openSUSE ISO: 
+I chose to install openSUSE Leap.
+https://www.opensuse.org/  (Choose Leap or Tumbleweed)
+
+Choose one of the following tools to create a bootable USB:
+Rufus (For Windows users installing openSUSE)
+Insert USB (8GB or more)  
+Download from: https://rufus.ie
+Open Rufus
+Select: openSUSE-Leap<VERSION>.iso
+Partition scheme: GPT  (In the BIOS, if Boot mode is UEFI then gpt. If Legacy then mbr)
+File system: ext4, xfs, or btrfs 
+Click "Start"
+
+OR
+
+I recommend this one:
+Ventoy (For multi-boot users)
+Download from: https://ventoy.net
+Extract and run Ventoy2Disk.exe
+Select USB drive and install Ventoy
+Then drag and drop the openSUSE-Leap<VERSION>.iso into the USB
+
+OR
+
+WoeUSB (For Linux users)
+Install WoeUSB:
+sudo woeusb --target-filesystem NTFS --device /path/to/openSUSE-Leap<VERSION>.iso /dev/sdX
+
+Boot from the USB: 
+When you restart or reboot your computer, you need to boot into the USB installer with the  openSUSE-Leap<VERSION>.iso.
+Way to boot into USB:
+Restart your computer and hold DELETE button then check your BIOS/UEFI boot menu options because
+you might need to change the boot order in the BIOS/UEFI settings. 
+Or simply
+Boot from the USB installer (Ventoy, Rufus, or woeusb) directly by 
+Restarting your PC and press F12, Esc, or another key depending on your system
+
+Install openSUSE: 
+When the openSUSE installer loads, choose Installation. 
+
+Follow the on-screen prompts, choosing your language, keyboard layout, etc. 
+
+When you reach the Disk Partitioning step, select Custom Partitioning. 
+
+Partition the Disk: 
+
+You will see the unallocated space left from shrinking the Windows partition. 
+
+Create the following partitions for openSUSE: 
+
+/boot (1GB, ext4) – this will store boot files. 
+
+/ (root) (25GB or more, ext4 or XFS) – this will be the root filesystem. 
+
+Swap (size based on your RAM, usually 2-4GB, swap or swap-on-LVM). 
+
+Optionally, you can create /home if you want to keep user data separate. 
+
+Make sure /boot/efi (EFI System Partition) is correctly selected, especially if you're using UEFI boot mode. 
+
+Note: Don’t modify the existing Windows partitions. 
+
+Install Bootloader: 
+
+Ensure that the GRUB bootloader is installed in the EFI partition (/boot/efi). 
+
+GRUB will allow you to choose between Windows 11 and openSUSE at boot. 
+
+Complete Installation: 
+
+After setting up the partitions, proceed with the installation. 
+
+The installer will copy files to the partitions and set up the bootloader. 
+
+Post-Installation: 
+
+Once installation is complete, reboot your computer. 
+
+You should see a GRUB menu at boot, allowing you to select either openSUSE or Windows 11. 
+
+Adjust Boot Order (if necessary): 
+
+If Windows boots automatically without showing the GRUB menu, you might need to change the boot order in the BIOS/UEFI to boot from the EFI partition where GRUB is installed. 
+
+You can also use efibootmgr to modify boot priorities if necessary. 
