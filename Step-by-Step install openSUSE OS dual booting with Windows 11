@@ -41,49 +41,44 @@ Restarting your PC and press F12, Esc, or another key depending on your system
 
 Install openSUSE: 
 When the openSUSE installer loads, choose Installation. 
-
 Follow the on-screen prompts, choosing your language, keyboard layout, etc. 
-
 When you reach the Disk Partitioning step, select Custom Partitioning. 
 
 Partition the Disk: 
+You will see the unallocated disk space left over after reinstalling Windows 11 or shrinking the Windows partition filesystem. 
 
-You will see the unallocated space left from shrinking the Windows partition. 
+Understanding dual booting partition situation for openSUSE:
+Normally, for installing an OS we need to create:
+/boot/efi         (Store bootloader files and related UEFI boot information)
+/boot             (Partition space needed for kernel & initramfs)
+/root             (Partition for OS filesystem)
+But because we are sharing the disk space with Windows 11 OS, while installing openSUSE, we only need to create the /root partition using LVM:
+/boot/efi         (No need to create because Windows 11 and openSUSE OS will share this partition)
+/boot             (No need to create because the kernel: vmlinuz file and the initramfs.img : will be stored in openSUSE /root partition)
+/root             (Yes, you have to create because the /root will hold /var /home /tmp /swap partitions using LVM)
 
-Create the following partitions for openSUSE: 
+To Use LVM you must first create a Volume Group (VG) first, then using VG, create each Logical Volume.
+When you are creating LV be sure to use the correct mounting points.
+Ex: lv_root is the name of my LV /root and it's mount point is (/) 
+└─nvme0n1p5                  259:5    0   1.5T  0 part 
+  ├─vg_openSUSE-lv_swap      253:4    0     5G  0 lvm  
+  ├─vg_openSUSE-lv_home      253:5    0   640G  0 lvm  
+  ├─vg_openSUSE-lv_var       253:6    0    50G  0 lvm  
+  └─vg_openSUSE-lv_root      253:7    0    90G  0 lvm  
 
-/boot (1GB, ext4) – this will store boot files. 
-
-/ (root) (25GB or more, ext4 or XFS) – this will be the root filesystem. 
-
-Swap (size based on your RAM, usually 2-4GB, swap or swap-on-LVM). 
-
-Optionally, you can create /home if you want to keep user data separate. 
-
-Make sure /boot/efi (EFI System Partition) is correctly selected, especially if you're using UEFI boot mode. 
-
-Note: Don’t modify the existing Windows partitions. 
-
-Install Bootloader: 
-
-Ensure that the GRUB bootloader is installed in the EFI partition (/boot/efi). 
-
-GRUB will allow you to choose between Windows 11 and openSUSE at boot. 
-
-Complete Installation: 
+Create the following partitions for openSUSE:
+Look around and understand the place that you are at.
+Do not modify the existing Windows partitions at all. 
+If you are using UEFI boot mode, make sure /boot/efi (EFI System Partition) mounted and is correctly selected. 
+Create a volume group while creating your first logical volume 
+/root      (25GB or more, filesystem type: btrfs, Role: Operation system) 
+/var       (10GB or more, filesystem type: xfs, Role: Data and ISV Applications)
+/swap      (2GB or more, filesystem type: swap)
+/home      (As much as you want on GB, filesystem type: ext4, Role: Operation system)
 
 After setting up the partitions, proceed with the installation. 
-
-The installer will copy files to the partitions and set up the bootloader. 
-
-Post-Installation: 
-
 Once installation is complete, reboot your computer. 
+Once the computer start up, you should see a GRUB menu at boot startup. This will allow you to select either openSUSE or Windows 11. 
 
-You should see a GRUB menu at boot, allowing you to select either openSUSE or Windows 11. 
-
-Adjust Boot Order (if necessary): 
-
-If Windows boots automatically without showing the GRUB menu, you might need to change the boot order in the BIOS/UEFI to boot from the EFI partition where GRUB is installed. 
-
-You can also use efibootmgr to modify boot priorities if necessary. 
+And with that complete your dual booting setup.
+Have fun and enjoy.
