@@ -59,7 +59,8 @@ Once openSUSE is installed, you can use it alongside Windows 11. The bootloader 
 You can also:
 - Install software through openSUSE's package manager (zypper).
 - Manage partitions, drivers, and system settings.
-- Set up Linux tools for development, scripting, and more.
+- Set up Linux tools for development, scripting, and more.    
+
 Plus I also feel that openSUSE forces you to learn and understand Linux because you have to handle backend processes that other Linux OS normally do.
 Main backend processes you will have to handle are:
 - systemd units you just installed or are already installed (systemctl status <packageName> will save you a lot of headache)
