@@ -5,7 +5,9 @@ Eleanor Roosevelt
 # Boot-Linux-OS-with-Windows-11-(Dual-booting-OS)
 Before starting this project, I highly recommend reinstalling Windows 11 OS on a clean disk. Why?   
 If you will are using openSUSE Linux as main OS for web servers, vm host, or data backup (/vars logs included),   
-then you will need added disk space for data, and storage pool.   
+then you will need added disk space for data, and storage pool. And reinstalling Windows 11 OS will  
+give you control on creating a smaller disk partition filesystem for Windows, which will leave the  
+rest of the disk space for Linux OS.   
 Highly recommended: [Install Windows 11 on a clean disk](https://github.com/axruffin2055/How-to-install-Windows-11-on-a-clean-disk)
 
 Now...
